@@ -1,0 +1,17 @@
+stages:
+  train:
+    cmd: python model_keras.py
+    deps:
+      - dataset/train  # Directorio con imágenes de entrenamiento
+      - dataset/test   # Directorio con imágenes de prueba
+      - model_keras.py
+    outs:
+      - models/mi_modelo.h5
+
+  convert:
+    cmd: python conv.py
+    deps:
+      - models/mi_modelo.h5
+      - conv.py
+    outs:
+      - models/mi_modelo1.onnx
