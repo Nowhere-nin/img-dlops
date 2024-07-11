@@ -97,7 +97,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 # Entrenamiento del modelo
-model.fit(X_train, y_train, epochs=10, batch_size=32, validation_split=0.2)
+model.fit(X_train, y_train, epochs=160, batch_size=32, validation_split=0.2)
 
 # Evaluar el modelo con datos de test para obtener información aproximada en cuanto al funcionamiento del modelo
 loss, accuracy = model.evaluate(X_test, y_test)
